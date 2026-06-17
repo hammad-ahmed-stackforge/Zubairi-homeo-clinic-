@@ -1527,6 +1527,29 @@
     backTop.classList.toggle('show', window.scrollY > 400);
   });
 </script>
- <left>><script src='https://cdn.jotfor.ms/agent/embedjs/019ed623ef127624b38a4d1c6d6e1e24fb40/embed.js'></script></left>
+ <!-- Custom Container to force Jotform Agent to the Left side -->
+<style>
+    /* targetting the container that holds the script */
+    #jotform-agent-left-side-container {
+        position: fixed !important;
+        bottom: 20px !important; /* adjust spacing from bottom */
+        left: 20px !important;  /* force to left side */
+        right: auto !important; /* cancel right alignment */
+        z-index: 999999 !important; /* ensures it sits on top */
+    }
+
+    /* Targetting common class names for Jotform's button container, 
+       this is a fallback as sometimes the script injects directly. */
+    #jotform-agent-left-side-container iframe,
+    #jotform-agent-left-side-container div {
+        left: 0 !important;
+        right: auto !important;
+    }
+</style>
+
+<div id="jotform-agent-left-side-container">
+    <!-- ⬇️ Yahan apka original Jotform script code hai ⬇️ -->
+    <script src='https://cdn.jotfor.ms/agent/embedjs/019ed623ef127624b38a4d1c6d6e1e24fb40/embed.js'></script>
+</div>
 </body>
 </html>
